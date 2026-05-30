@@ -1,15 +1,15 @@
 import { useState } from 'react'
 import './index.css'
 
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+import { HashRouter, Routes, Route, Link } from 'react-router-dom'
 
 const initialFilmy = [
-    { tytul: 'Prisoners', gatunek: 'Thriller', ocena: '10', rok: '2013', zdjecie: './public/prisoners.jpg' },
-    { tytul: 'Memento', gatunek: 'Thriller', ocena: '9.0', rok: '2000', zdjecie: './public/memento.jpg' },
-    { tytul: 'Whiplash', gatunek: 'Dramat', ocena: '9.0', rok: '2014', zdjecie: './public/whiplash.jpg' },
-    { tytul: 'Primal fear', gatunek: 'Thriller', ocena: '9.5', rok: '1996', zdjecie: './public/primalfear.jpg' },
-    { tytul: 'Shutter Island', gatunek: 'Thriller', ocena: '10', rok: '2014', zdjecie: './public/shutter.jpg' },
-    { tytul: 'Memories of Murder', gatunek: 'Thriller', ocena: '9.0', rok: '2003', zdjecie: './public/memories of murder.jpg' },
+    { tytul: 'Prisoners', gatunek: 'Thriller', ocena: '10', rok: '2013', zdjecie: './prisoners.jpg' },
+    { tytul: 'Memento', gatunek: 'Thriller', ocena: '9.0', rok: '2000', zdjecie: './memento.jpg' },
+    { tytul: 'Whiplash', gatunek: 'Dramat', ocena: '9.0', rok: '2014', zdjecie: './whiplash.jpg' },
+    { tytul: 'Primal fear', gatunek: 'Thriller', ocena: '9.5', rok: '1996', zdjecie: './primalfear.jpg' },
+    { tytul: 'Shutter Island', gatunek: 'Thriller', ocena: '10', rok: '2014', zdjecie: './shutter.jpg' },
+    { tytul: 'Memories of Murder', gatunek: 'Thriller', ocena: '9.0', rok: '2003', zdjecie: './memories of murder.jpg' },
 ]
 
 function Filmy({ filmy, setFilmy }) {
@@ -352,7 +352,7 @@ function App() {
 
     return (
         <>
-            <BrowserRouter>
+            <HashRouter>
                 <div className='flex width-100 p-1.5 justify-between bg-gray-400'>
                     <header className='text-[25px]'>Kinoexpress</header>
                     <nav>
@@ -366,7 +366,7 @@ function App() {
                     <Route path="/recenzje" element={<Recenzje filmy={filmy} />} />
                     <Route path="/rankingi" element={<Rankingi filmy={filmy} />} />
                 </Routes>
-            </BrowserRouter>
+            </HashRouter>
         </>
     )
 }
